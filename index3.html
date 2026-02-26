@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev & Educator | Premium Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
+        .bento-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: all 0.3s ease; }
+        .bento-card:hover { border-color: #6366f1; transform: translateY(-5px); background: rgba(30, 41, 59, 0.8); }
+        .gradient-text { background: linear-gradient(90deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body x-data="{ mobileMenu: false }">
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter">
+                <span class="text-white">DEV</span><span class="text-indigo-500">LAB.</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-slate-400">
+                <a href="#work" class="hover:text-white transition">Work</a>
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#teaching" class="hover:text-white transition">Teaching</a>
+                <a href="#contact" class="bg-indigo-600 text-white px-6 py-2.5 rounded-full hover:bg-indigo-500 transition shadow-lg shadow-indigo-500/20">Let's Talk</a>
+            </div>
+
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-white text-2xl">☰</button>
+        </div>
+    </nav>
+
+    <section class="relative pt-48 pb-32 px-6 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-900/20 blur-[120px] rounded-full -z-10"></div>
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8">
+                I build & teach the <br><span class="gradient-text">Modern Web.</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Full-stack developer specializing in scalable PHP applications and bespoke WordPress solutions. Empowering businesses through code and students through mentorship.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#work" class="px-10 py-4 bg-white text-slate-900 font-bold rounded-2xl hover:bg-slate-200 transition">View Projects</a>
+                <a href="#contact" class="px-10 py-4 bento-card font-bold hover:text-indigo-400 transition">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <h2 class="text-3xl font-bold mb-4">Core Expertise</h2>
+            <p class="text-slate-400">Tailored digital solutions for every industry.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+            <div class="md:col-span-2 md:row-span-2 bento-card p-10 flex flex-col justify-end relative overflow-hidden">
+                <div class="absolute top-10 right-10 text-6xl opacity-20 group-hover:opacity-40 transition">🐘</div>
+                <h3 class="text-3xl font-bold mb-4">Enterprise PHP Apps</h3>
+                <p class="text-slate-400">Scalable, secure, and custom-built applications for complex workflows. I specialize in building CRM systems, school management portals, and custom APIs.</p>
+            </div>
+
+            <div class="md:col-span-2 bento-card p-10 flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="p-3 bg-indigo-500/10 rounded-xl">🌐</span>
+                    <h3 class="text-2xl font-bold">WP Masterclass</h3>
+                </div>
+                <p class="text-slate-400">High-speed WordPress sites for <span class="text-white">Hotels, Churches, and Shops</span>. Built for SEO and easy management.</p>
+            </div>
+
+            <div class="md:col-span-1 bento-card p-8 text-center flex flex-col items-center justify-center">
+                <div class="text-3xl mb-4">👨‍🏫</div>
+                <h3 class="font-bold">Teaching</h3>
+                <p class="text-xs text-slate-500 mt-2">Mentoring developers in core logic & web tech.</p>
+            </div>
+
+            <div class="md:col-span-1 bento-card p-8 text-center flex flex-col items-center justify-center">
+                <div class="text-3xl mb-4">🛍️</div>
+                <h3 class="font-bold">E-Commerce</h3>
+                <p class="text-xs text-slate-500 mt-2">Conversion-ready stores that drive sales.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching" class="py-24 bg-slate-900/30 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-6 mb-12">
+                <div class="h-px flex-1 bg-slate-800"></div>
+                <h2 class="text-2xl font-bold tracking-widest uppercase text-indigo-400">The Academy</h2>
+                <div class="h-px flex-1 bg-slate-800"></div>
+            </div>
+            
+            <div x-data="{ active: 1 }" class="space-y-6">
+                <div @click="active = 1" :class="active === 1 ? 'border-indigo-500 bg-indigo-500/5' : 'border-slate-800'" class="border-2 p-8 rounded-3xl cursor-pointer transition">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-bold">Web Development Fundamentals</h4>
+                        <span class="text-2xl" x-text="active === 1 ? '−' : '+'"></span>
+                    </div>
+                    <div x-show="active === 1" x-collapse class="mt-4 text-slate-400">
+                        Perfect for beginners. We cover HTML5, CSS3, and modern JavaScript, focusing on responsive design and clean code structure.
+                    </div>
+                </div>
+
+                <div @click="active = 2" :class="active === 2 ? 'border-indigo-500 bg-indigo-500/5' : 'border-slate-800'" class="border-2 p-8 rounded-3xl cursor-pointer transition">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xl font-bold">Advanced Backend with PHP</h4>
+                        <span class="text-2xl" x-text="active === 2 ? '−' : '+'"></span>
+                    </div>
+                    <div x-show="active === 2" x-collapse class="mt-4 text-slate-400">
+                        Deep dive into database architecture (MySQL), OOP PHP, and security best practices for real-world applications.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto bento-card p-1 text-center">
+            <div class="p-12 md:p-24 bg-slate-950 rounded-[22px]">
+                <h2 class="text-5xl font-extrabold mb-6">Let's build your <br><span class="gradient-text">next big idea.</span></h2>
+                <p class="text-slate-400 mb-10 max-w-xl mx-auto">Whether it's a school portal or a shop, I provide fast delivery and 24/7 support.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:your@email.com" class="bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:scale-105 transition">Email Me Directly</a>
+                    <a href="#" class="px-8 py-4 border border-slate-700 rounded-full font-bold hover:bg-slate-800 transition">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pro -->
+     <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            
+            <div class="md:col-span-4 bento-card p-2 flex flex-col">
+                <div class="aspect-square bg-slate-800 rounded-[20px] overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
+                         alt="Lencho Neda" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
+                    <div class="absolute bottom-4 left-4 right-4 glass p-4 rounded-xl border border-white/10">
+                        <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Currently Based In</p>
+                        <p class="text-white font-semibold">Remote / Worldwide</p>
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span class="text-slate-500 text-sm">Experience</span>
+                        <span class="text-white font-medium">5+ Years</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span class="text-slate-500 text-sm">Education</span>
+                        <span class="text-white font-medium">CS Degree / Certs</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-500 text-sm">Specialty</span>
+                        <span class="text-white font-medium">PHP & WP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-8 bento-card p-10 md:p-16 flex flex-col justify-center">
+                <h2 class="text-sm font-bold text-indigo-500 uppercase tracking-[0.2em] mb-6">The Person Behind The Code</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
+                    I bridge the gap between <span class="text-indigo-400">complex logic</span> and <span class="text-white">human experience.</span>
+                </h3>
+                <div class="space-y-6 text-slate-400 leading-relaxed text-lg">
+                    <p>
+                        My journey started with a fascination for how the internet works, which led me deep into the world of **PHP and WordPress**. Over the years, I've evolved from a freelancer into a full-stack architect, building everything from automated hotel booking engines to comprehensive school management portals.
+                    </p>
+                    <p>
+                        But I’m not just a developer. As an **instructor**, I spend my time breaking down high-level programming concepts into digestible lessons. Whether I'm coding a shop for a local business or teaching a classroom of aspiring developers, my goal is the same: **clarity, efficiency, and growth.**
+                    </p>
+                </div>
+                
+                <div class="mt-10">
+                    <p class="text-white font-bold mb-4">Core Technology Stack:</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">PHP 8.x</span>
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">WordPress / Headless WP</span>
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">MySQL / MariaDB</span>
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">JavaScript (ES6+)</span>
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm text-indigo-300">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+     <!-- pro -->
+
+    <footer class="py-12 text-center border-t border-slate-900">
+        <p class="text-slate-600 text-sm tracking-widest">© 2026 DESIGNED Gadaa Digital</p>
+    </footer>
+
+</body>
+</html>
